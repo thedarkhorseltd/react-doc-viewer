@@ -1,6 +1,6 @@
 {
-  "name": "@darkhorse/react-doc-viewer",
-  "version": "1.0.1",
+  "name": "doc-viewer-react-js",
+  "version": "1.0.2",
   "description": "File viewer for React.",
   "author": "Matthew Mogford / Damian Cyntler",
   "type": "module",
@@ -10,21 +10,24 @@
     "file-viewer",
     "doc-viewer"
   ],
-  "license": "Apache License 2.0",
-  "homepage": "https://cyntler.github.io/react-doc-viewer",
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://cyntler.github.io/doc-viewer-react-js",
   "repository": {
-    "url": "https://github.com/cyntler/react-doc-viewer"
+    "url": "git+https://github.com/thedarkhorseltd/react-doc-viewer"
   },
   "files": [
     "dist/**"
   ],
   "types": "./dist/index.d.ts",
-  "main": "./dist/react-doc-viewer.cjs",
-  "module": "./dist/react-doc-viewer.js",
+  "main": "./dist/doc-viewer-react-js.cjs",
+  "module": "./dist/doc-viewer-react-js.js",
   "exports": {
     ".": {
-      "import": "./dist/react-doc-viewer.js",
-      "require": "./dist/react-doc-viewer.cjs",
+      "import": "./dist/doc-viewer-react-js.js",
+      "require": "./dist/doc-viewer-react-js.cjs",
       "types": "./dist/index.d.ts"
     },
     "./dist/index.css": {
@@ -111,5 +114,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "bugs": {
+    "url": "https://github.com/cyntler/doc-viewer-react-js/issues"
   }
 }

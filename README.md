@@ -1,5 +1,5 @@
-[![npm-version](https://img.shields.io/npm/v/@darkhorse/react-doc-viewer.svg)](https://www.npmjs.com/package/@darkhorse/react-doc-viewer)
-[![npm-download](https://img.shields.io/npm/dt/@darkhorse/react-doc-viewer.svg)](https://www.npmjs.com/package/@darkhorse/react-doc-viewer)
+[![npm-version](https://img.shields.io/npm/v/doc-viewer-react-js.svg)](https://www.npmjs.com/package/doc-viewer-react-js)
+[![npm-download](https://img.shields.io/npm/dt/doc-viewer-react-js.svg)](https://www.npmjs.com/package/doc-viewer-react-js)
 
 ## I am stopping work on this library
 
@@ -7,11 +7,11 @@
 **Due to lack of free time to develop this library, I am stopping work on this library.<br>
 > It will not be developed in the near future.**
 
-# @darkhorse/react-doc-viewer
+# doc-viewer-react-js
 
 File viewer for **React v17+**.
 
-> This is a fork of https://github.com/Alcumus/react-doc-viewer (inactivity for a long time).
+> This is a fork of https://github.com/Alcumus/doc-viewer-react-js (inactivity for a long time).
 
 ## Important note!
 
@@ -78,16 +78,16 @@ File viewer for **React v17+**.
 
 ## Storybook Demo
 
-https://cyntler.github.io/react-doc-viewer
+https://cyntler.github.io/doc-viewer-react-js
 
 ## Installation
 
 Use one of the package managers for Node.js.
 
 ```bash
- npm i @darkhorse/react-doc-viewer
+ npm i doc-viewer-react-js
  # or
- yarn add @darkhorse/react-doc-viewer
+ yarn add doc-viewer-react-js
 ```
 
 ## Usage
@@ -99,7 +99,7 @@ Use one of the package managers for Node.js.
 The library exports a CSS file containing classes needed for correct rendering of e.g. PDF files. It is best to include it at the beginning of the application or in the place where you use this library.
 
 ```tsx
-import "@darkhorse/react-doc-viewer/dist/index.css";
+import "doc-viewer-react-js/dist/index.css";
 ```
 
 ### Basic
@@ -108,8 +108,8 @@ DocViewer requires at least an array of document objects to function.
 Each document object must have a uri to a file, either a url that returns a file or a local file.
 
 ```tsx
-import DocViewer, { DocViewerRenderers } from "@darkhorse/react-doc-viewer";
-import "@darkhorse/react-doc-viewer/dist/index.css";
+import DocViewer, { DocViewerRenderers } from "doc-viewer-react-js";
+import "doc-viewer-react-js/dist/index.css";
 
 function App() {
   const docs = [
@@ -126,8 +126,8 @@ function App() {
 By default, the first item in your `documents` array will be displayed after the component is rendered. However, there is a prop `initialActiveDocument` that you can point to the initial document that should be displayed.
 
 ```tsx
-import DocViewer, { DocViewerRenderers } from "@darkhorse/react-doc-viewer";
-import "@darkhorse/react-doc-viewer/dist/index.css";
+import DocViewer, { DocViewerRenderers } from "doc-viewer-react-js";
+import "doc-viewer-react-js/dist/index.css";
 
 const App = () => {
   const docs = [
@@ -210,8 +210,8 @@ To use the included renderers.
 `DocViewerRenderers` is an Array of all the included renderers.
 
 ```tsx
-import DocViewer, { DocViewerRenderers } from "@darkhorse/react-doc-viewer";
-import "@darkhorse/react-doc-viewer/dist/index.css";
+import DocViewer, { DocViewerRenderers } from "doc-viewer-react-js";
+import "doc-viewer-react-js/dist/index.css";
 
 <DocViewer
   pluginRenderers={DocViewerRenderers}
@@ -222,8 +222,8 @@ import "@darkhorse/react-doc-viewer/dist/index.css";
 Or you can import individual renderers.
 
 ```tsx
-import DocViewer, { PDFRenderer, PNGRenderer } from "@darkhorse/react-doc-viewer";
-import "@darkhorse/react-doc-viewer/dist/index.css";
+import DocViewer, { PDFRenderer, PNGRenderer } from "doc-viewer-react-js";
+import "doc-viewer-react-js/dist/index.css";
 
 <DocViewer
   pluginRenderers={[PDFRenderer, PNGRenderer]}
@@ -237,7 +237,7 @@ To create a custom renderer, that will just exist for your project.
 
 ```tsx
 import React from "react";
-import DocViewer from "@darkhorse/react-doc-viewer";
+import DocViewer from "doc-viewer-react-js";
 
 const MyCustomPNGRenderer: DocRenderer = ({
   mainState: { currentDocument },
@@ -258,8 +258,8 @@ MyCustomPNGRenderer.weight = 1;
 And supply it to `pluginRenderers` inside an `Array`.
 
 ```tsx
-import DocViewer, { DocViewerRenderers } from "@darkhorse/react-doc-viewer";
-import "@darkhorse/react-doc-viewer/dist/index.css";
+import DocViewer, { DocViewerRenderers } from "doc-viewer-react-js";
+import "doc-viewer-react-js/dist/index.css";
 
 <DocViewer
   pluginRenderers={[MyCustomPNGRenderer]}
@@ -273,7 +273,7 @@ import "@darkhorse/react-doc-viewer/dist/index.css";
 
 ### Custom File Loader
 
-If you need to prevent the actual loading of the file by `@darkhorse/react-doc-viewer`.<br>
+If you need to prevent the actual loading of the file by `doc-viewer-react-js`.<br>
 You can decorate your custom renderer with a callback to do as you wish. e.g. Load the file yourself in an iFrame.
 
 ```tsx
@@ -311,11 +311,11 @@ You can provide a theme object with one or all of the available properties.
 ## Custom pre-fetch HTTP Verb
 
 Some services (such as AWS) provide URLs that works only for one pre-configured verb.
-By default, `@darkhorse/react-doc-viewer` fetches document metadata through a `HEAD` request in order to guess its `Content-Type`.
+By default, `doc-viewer-react-js` fetches document metadata through a `HEAD` request in order to guess its `Content-Type`.
 If you need to have a specific verb for the pre-fetching, use the `prefetchMethod` option on the DocViewer:
 
 ```tsx
-import DocViewer, { DocViewerRenderers } from "@darkhorse/react-doc-viewer";
+import DocViewer, { DocViewerRenderers } from "doc-viewer-react-js";
 
 <DocViewer prefetchMethod="GET" />;
 ```
@@ -358,7 +358,7 @@ Any styling applied to the `<DocViewer>` component, is directly applied to the m
 Each component / div already has a DOM id that can be used to style any part of the document viewer.
 
 ```css
-#react-doc-viewer #header-bar {
+#doc-viewer-react-js #header-bar {
   background-color: #faf;
 }
 ```
@@ -390,7 +390,7 @@ const MyDocViewer = styled(DocViewer)`
 Since **v1.13.0** you can control the display of the document with `reference`.
 
 ```tsx
-import DocViewer, { DocViewerRef } from "@darkhorse/react-doc-viewer";
+import DocViewer, { DocViewerRef } from "doc-viewer-react-js";
 
 export const UsingRef = () => {
   const docViewerRef = useRef<DocViewerRef>(null);

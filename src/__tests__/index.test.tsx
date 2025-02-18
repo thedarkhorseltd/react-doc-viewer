@@ -9,7 +9,7 @@ import pngFile from "../exampleFiles/png-image.png?url";
 test("renders component with no documents", () => {
   render(<DocViewer documents={[]} />);
 
-  expect(screen.getByTestId("react-doc-viewer")).toBeDefined();
+  expect(screen.getByTestId("doc-viewer-react-js")).toBeDefined();
 });
 
 test("renders component with documents", () => {
@@ -22,7 +22,7 @@ test("renders component with documents", () => {
 
   render(<DocViewer documents={docs} />);
 
-  expect(screen.getByTestId("react-doc-viewer")).toBeDefined();
+  expect(screen.getByTestId("doc-viewer-react-js")).toBeDefined();
   expect(screen.getByText(`Document 1 of ${docs.length}`)).toBeDefined();
 });
 
@@ -30,7 +30,7 @@ test("renders component with unsupported file type", () => {
   const docs = [{ uri: "", fileType: "application/postscript" }];
   render(<DocViewer documents={docs} />);
 
-  expect(screen.getByTestId("react-doc-viewer")).toBeDefined();
+  expect(screen.getByTestId("doc-viewer-react-js")).toBeDefined();
 
   expect(
     screen.getByText("No renderer for file type: application/postscript"),
@@ -43,7 +43,7 @@ test("renders doc viewer with initialActiveDocument prop", () => {
 
   const proxyRenderer = screen.getByTestId("proxy-renderer");
 
-  expect(screen.getByTestId("react-doc-viewer")).toBeDefined();
+  expect(screen.getByTestId("doc-viewer-react-js")).toBeDefined();
   expect(screen.getByText(`Document 2 of ${docs.length}`)).toBeDefined();
   expect(proxyRenderer).toBeDefined();
   expect(proxyRenderer.querySelector("img")).toBeDefined();

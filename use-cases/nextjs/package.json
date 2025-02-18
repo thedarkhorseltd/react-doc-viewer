@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@cyntler/react-doc-viewer": "^1.0.1",
+    "doc-viewer-react-js": "1.0.3",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18"

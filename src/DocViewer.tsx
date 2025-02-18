@@ -47,8 +47,8 @@ const DocViewer = forwardRef<DocViewerRef, DocViewerProps>((props, ref) => {
         theme={theme ? { ...defaultTheme, ...theme } : defaultTheme}
       >
         <Container
-          id="react-doc-viewer"
-          data-testid="react-doc-viewer"
+          id="doc-viewer-react-js"
+          data-testid="doc-viewer-react-js"
           className={props.className}
           style={props.style}
         >
