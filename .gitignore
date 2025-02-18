@@ -24,3 +24,5 @@ yarn-debug.log*
 yarn-error.log*
 .idea
 *storybook.log
+use-cases/nextjs/yalc.lock
+use-cases/nextjs/yarn.lock

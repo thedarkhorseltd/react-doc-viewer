@@ -36,6 +36,7 @@ export interface IHeaderConfig {
 export interface IPdfZoomConfig {
   defaultZoom: number;
   zoomJump: number;
+  onZoomChange?: (zoomLevel: number) => void;
 }
 
 export type IHeaderOverride = (

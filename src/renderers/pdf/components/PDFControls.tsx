@@ -24,11 +24,21 @@ const PDFControls: FC = () => {
       numPages,
       zoomJump,
       defaultZoomLevel,
+      onZoomChangeCallback,
     },
     dispatch,
   } = useContext(PDFContext);
 
   const currentDocument = mainState?.currentDocument || null;
+
+  const handleZoomChange = (newZoom: number) => {
+    dispatch(setZoomLevel(newZoom));
+
+    // Call the callback if it exists
+    if (onZoomChangeCallback) {
+      onZoomChangeCallback(newZoom);
+    }
+  };
 
   return (
     <Container id="pdf-controls">
@@ -47,21 +57,21 @@ const PDFControls: FC = () => {
 
       <ControlButton
         id="pdf-zoom-out"
-        onMouseDown={() => dispatch(setZoomLevel(zoomLevel - zoomJump))}
+        onMouseDown={() => () => handleZoomChange(zoomLevel - zoomJump)}
       >
         <ZoomOutPDFIcon color="#000" size="80%" />
       </ControlButton>
 
       <ControlButton
         id="pdf-zoom-in"
-        onMouseDown={() => dispatch(setZoomLevel(zoomLevel + zoomJump))}
+        onMouseDown={() => () => handleZoomChange(zoomLevel + zoomJump)}
       >
         <ZoomInPDFIcon color="#000" size="80%" />
       </ControlButton>
 
       <ControlButton
         id="pdf-zoom-reset"
-        onMouseDown={() => dispatch(setZoomLevel(defaultZoomLevel))}
+        onMouseDown={() => () => handleZoomChange(defaultZoomLevel)}
         disabled={zoomLevel === defaultZoomLevel}
       >
         <ResetZoomPDFIcon color="#000" size="70%" />

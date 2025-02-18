@@ -51,6 +51,7 @@ export const Default = () => (
       pdfZoom: {
         defaultZoom: 1.1,
         zoomJump: 0.2,
+        onZoomChange: (zoomLevel) => {},
       },
       pdfVerticalScrollByDefault: true,
     }}

@@ -29,6 +29,9 @@ const PDFProvider: FC<PropsWithChildren<{ mainState: IMainState }>> = ({
     defaultZoomLevel:
       mainState.config?.pdfZoom?.defaultZoom ??
       initialPDFState.defaultZoomLevel,
+    onZoomChangeCallback:
+      mainState.config?.pdfZoom?.onZoomChange ??
+      initialPDFState.onZoomChangeCallback,
     zoomLevel:
       mainState.config?.pdfZoom?.defaultZoom ?? initialPDFState.zoomLevel,
     zoomJump: mainState.config?.pdfZoom?.zoomJump ?? initialPDFState.zoomJump,

@@ -21,6 +21,7 @@ export type IPDFState = {
   numPages: number;
   currentPage: number;
   mainState?: IMainState;
+  onZoomChangeCallback?: (zoomLevel: number) => void;
 };
 
 export const initialPDFState: IPDFState = {
